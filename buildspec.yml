@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+    - echo "Pre-Build Phase"
+  build:
+    commands:
+      - echo "Build Phase Started"
+      - mvn clean package
+  post_build:
+    commands:
+      - echo "Build Succeded"
+artifacts:
+  files:
+    - target/aws-ci-cd*/*
+  discard-paths: yes
+
